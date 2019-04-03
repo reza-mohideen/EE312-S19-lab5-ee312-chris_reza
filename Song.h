@@ -1,3 +1,11 @@
+/* Song.h
+
+Christopher Mathew - ctm2382
+Reza Mohideen - rm54783
+EE 312 4/2/19
+
+*/
+
 #ifndef SONG_H
 #define SONG_H
 
@@ -17,9 +25,9 @@ class Song {
 
     public:
         Song();
-        Song(string title);
-        Song(string title, string artist);
-        Song(string title, string artist, int size);
+        Song(string artist);
+        Song(string artist, string title);
+        Song(string artist, string title, int size);
 
         string getTitle() const
         { return title; }
@@ -31,8 +39,6 @@ class Song {
         void setArtist(string artistName);
         int getSize() const;
         void setSize(int s);
-
-        void swap(Song &p);
 
         bool operator >(Song const &rhs);
         bool operator <(Song const &rhs);

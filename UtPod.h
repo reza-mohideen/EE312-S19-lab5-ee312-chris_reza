@@ -1,4 +1,10 @@
-//DOCUMENT HERE
+/* UtPod.h
+
+Christopher Mathew - ctm2382
+Reza Mohideen - rm54783
+EE 312 4/2/19
+
+*/
 
 #ifndef UTPOD_H
 #define UTPOD_H
@@ -15,8 +21,8 @@ private:
 
     struct SongNode
     {
-     Song s;
-     SongNode *next;
+     Song s; //song in node
+     SongNode *next; //points to the next node
     };
 
     SongNode *songs, *tail;  //the head and tail pointer
@@ -41,9 +47,9 @@ public:
 
     precondition: s is a valid Song
 
-    input parms -
+    input parms - object of type Song that caller wants to add
 
-    output parms -
+    output parms - Returns 0 if successful in adding the song, returns -1 if unsuccessful to add song
     */
 
     int addSong(Song const &s);
@@ -56,9 +62,9 @@ public:
        o returns -1 if nothing is removed
 
 
-     input parms -
+     input parms - object of type of song that caller wishes to remove
 
-     output parms -
+     output parms - 0 if successful, -1 if unsuccessful
     */
 
     int removeSong(Song const &s);
@@ -68,9 +74,9 @@ public:
     *  shuffles the songs into random order
       o will do nothing if there are less than two songs in the current list
 
-     input parms -
+     input parms - none
 
-     output parms -
+     output parms - none, shuffles the linked list
     */
 
     void shuffle();
@@ -80,9 +86,9 @@ public:
     * prints the current list of songs in order from first to last to standard output
     * format - Title, Artist, size in MB (one song per line)
 
-     input parms -
+     input parms - none
 
-     output parms -
+     output parms - prints list of songs from head to tail
     */
 
     void showSongList();
@@ -92,9 +98,9 @@ public:
     *  sorts the songs in ascending order
       o will do nothing if there are less than two songs in the current list
 
-     input parms -
+     input parms - none
 
-     output parms -
+     output parms - sorts the songs from least to greatest
     */
 
     void sortSongList();
@@ -103,9 +109,9 @@ public:
     /* FUNCTION - void clearMemory
     * clears all the songs from memory
 
-     input parms -
+     input parms - none
 
-     output parms -
+     output parms - frees the dynamically allocated memory of the entire linked list
     */
     void clearMemory();
 
@@ -114,11 +120,10 @@ public:
     *  returns the total amount of memory in the UtPod
       o will do nothing if there are less than two songs in the current list
 
-     input parms -
+     input parms - none
 
-     output parms -
+     output parms - returns the total memory of the UtPod
     */
-
     int getTotalMemory();
 
 
@@ -126,14 +131,13 @@ public:
     /* FUNCTION - int getRemainingMemory
     *  returns the amount of memory available for adding new songs
 
-     input parms -
+     input parms - none
 
-     output parms -
+     output parms - returns the memory that is not used up by the songs in the list
     */
-
     int getRemainingMemory();
 
-
+    //Deconstructor for the UtPod class
     ~UtPod();
 
 };
